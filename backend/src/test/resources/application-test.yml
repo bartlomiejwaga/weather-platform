@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: localhost
+    port: 3025
+
+logging:
+  level:
+    com.weather: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+
+# Disable external services for testing
+weather:
+  cache:
+    enabled: true
+    ttl: 60
+  api:
+    openweather:
+      enabled: false
+    iqair:
+      enabled: false
